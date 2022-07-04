@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html>
+    <header>
+        <style>
+            body{
+                margin: 0;
+                background-color: black;
+            }
+            .header{
+                position: fixed;
+                top: 0px;
+                left: 50%;
+                width: 100%;
+                background-color: rgb(255, 255, 255);
+                transform: translate(-50%,0);
+                z-index: 999;
+            }
+            .header .col1 {
+                float:left; width:auto;
+            }
+            .header .col2 {
+                float:right; width:auto;
+            }
+            .header h1{
+                text-align: center;
+                margin-top: 10px;
+                color: rgb(94, 0, 131);
+                padding: 0px;
+                padding-left: 30px;
+                font-size: 50px;
+                height: 60px;
+            }
+            .header h3{
+                text-align: center;
+                color: rgb(34, 130, 255);
+                padding: 0px;
+                padding-left: 30px;
+                font-size: 15px;
+                height: 0px;
+                margin-top: -30px;
+            }
+            .header .call h2{
+                text-align: center;
+                font-size: 20px;
+                color: rgb(255, 102, 0);
+                margin-top: 18px;
+            }
+            .header .call{
+                border: 1px solid rgb(0, 114, 167);
+                margin: 10px;
+                height: 80px;
+                border-radius: 15px;
+                background-color: rgba(111, 207, 231, 0.712);
+            }
+            .header .call .c1{
+                float: left;
+                width: 100px;
+                height: 80px;
+                padding-left: 20px;
+                padding-right: 10px;
+                font-size: 14px;
+                text-align: left;
+                color:rgb(94, 0, 131);
+                border-right: 1px solid rgb(0, 114, 167);
+            }
+            .header .call .c3{
+                color: rgb(255, 102, 0);
+                font-size: 40px;
+                text-align: center;
+                float: left;
+                width: 70px;
+                height: 50px;
+                padding: 10px;
+                padding-right: 20px;
+                padding-top: 20px;
+            }
+            .header .call .c2{
+                float: right;
+                width: 230px;
+                height: 80px;
+                margin-left: -40px;
+            }
+            .clear { clear:both; }
+            .line{
+                position: relative;
+                height: 10px;
+                background-color: rgb(255, 97, 97);
+            }
+            .line .pline{
+                position: absolute;
+                width: 50%;
+                height: 10px;
+                background-color: rgb(15, 247, 26);
+            }
+            .headerb{
+                height:110px;
+            }
+            .body{
+                height: 1000px;
+                position: relative;
+                width: 100%;
+                margin: 10px;
+            }
+            .body .grid{
+                position: relative;
+                float:left; width:400px;
+                background-color: white;
+                height: 400px;
+                margin: 10px;
+            }
+        </style>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    </header>
+    <body>
+        <div class="header" id="head">
+            <div class="col1" id="col1">
+                <div>
+                    <h1>Ken's Baby Store</h1>
+                </div>
+                <div>
+                    <h3>The Touch Of Love</h3>
+                </div>
+            </div>
+            <div class="col2" id="col2">
+                <div class="call" id="call1">
+                    <div class="c1">
+                        <p>ADD 1,000 Baht TO GET FREE SHIPPING*</p>
+                    </div>
+                    <div class="c3">
+                        <i class="fas fa-cart-arrow-down"></i>
+                    </div>
+                    <div class="c2">
+                        <h2>Call For More Detail 0123456789</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="line" id='main_line'>
+            </div>
+        </div>
+        <div class="headerb" id="hb">
+        </div>
+        <div class="body">
+            <div class="grid"></div><div class="grid"></div>
+        </div>
+        <script type="text/javascript" src="ken.js"></script>
+    </body>
+</html>
