@@ -104,12 +104,29 @@ function main_line(){
 
 var color_line = new main_line();
 color_line.create(10);
+var eep = document.getElementsByClassName("flex-item");
+var c_main = document.getElementById("container_main");
 
 function move_color_line(){
-    
     color_line.move(0.02);
     var el = document.getElementById("head").getBoundingClientRect();
-    document.getElementById("hb").style.height = (el.height).toString()+'px';
+    document.getElementById("hb").style.height = (el.height + 5).toString()+'px';
+    if(el.width > 1200){
+        if(c_main.classList.contains('container-fluid')){
+            c_main.classList.remove('container-fluid');
+        }
+        if(!c_main.classList.contains('container')){
+            c_main.classList.add('container');
+        }
+    }
+    else{
+        if(!c_main.classList.contains('container-fluid')){
+            c_main.classList.add('container-fluid');
+        }
+        if(c_main.classList.contains('container')){
+            c_main.classList.remove('container');
+        }
+    }
     if(el.width >= 848){
         document.getElementById("col1").style.cssFloat = "left";
         document.getElementById("col2").style.cssFloat = "right";
@@ -119,6 +136,20 @@ function move_color_line(){
         document.getElementById("col1").style.cssFloat = "none";
         document.getElementById("col2").style.cssFloat = "none";
         document.getElementById("col1").style.padding = "10px";
+    }
+    var ee = document.getElementById("hb").getBoundingClientRect();
+    if(ee.top < 0 && ee.top > -100){
+        var a = 255 - (Math.abs(ee.top))/100*44;
+        for(item of eep){item.style.backgroundColor = 'rgb(233, '+a.toString()+', '+a.toString()+')';}
+        document.getElementsByClassName("header")[0].style.backgroundColor = 'rgb(233, '+a.toString()+', '+a.toString()+')';
+    }
+    else if(ee.top <= -100){
+        for(item of eep){item.style.backgroundColor = 'rgb(233, 211, 211)';}
+        document.getElementsByClassName("header")[0].style.backgroundColor = 'rgb(233, 211, 211)';
+    }
+    else{
+        for(item of eep){item.style.backgroundColor = 'rgb(255,255,255)';}
+        document.getElementsByClassName("header")[0].style.backgroundColor = 'rgb(255,255,255)';
     }
 }
 setInterval(move_color_line,1);

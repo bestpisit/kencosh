@@ -5,7 +5,8 @@
         <style>
             body{
                 margin: 0;
-                background-color: black;
+                background-color: rgb(255, 255, 255);
+                font-family: 'Helvetica';
             }
             .header{
                 position: fixed;
@@ -38,7 +39,7 @@
                 padding-left: 30px;
                 font-size: 15px;
                 height: 0px;
-                margin-top: -30px;
+                margin-top: -5px;
             }
             .header .call h2{
                 text-align: center;
@@ -55,11 +56,12 @@
             }
             .header .call .c1{
                 float: left;
-                width: 100px;
+                width: 150px;
                 height: 80px;
                 padding-left: 20px;
                 padding-right: 10px;
-                font-size: 14px;
+                padding-top: 5px;
+                font-size: 15px;
                 text-align: left;
                 color:rgb(94, 0, 131);
                 border-right: 1px solid rgb(0, 114, 167);
@@ -69,11 +71,11 @@
                 font-size: 40px;
                 text-align: center;
                 float: left;
-                width: 70px;
+                width: 80px;
                 height: 50px;
                 padding: 10px;
                 padding-right: 20px;
-                padding-top: 20px;
+                padding-top: 10px;
             }
             .header .call .c2{
                 float: right;
@@ -96,22 +98,108 @@
             .headerb{
                 height:110px;
             }
-            .body{
-                height: 1000px;
+            .menu{
                 position: relative;
+                height: auto;
+                z-index: 1;
+            }
+            .flex-container {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+            .flex-item {
+                position: relative;
+                height: 30px;
+                text-align: center;
+                background-color:white;
+                color:rgb(110, 94, 68);
+                width:100px;
+            }
+            .flex-item .lang {
+                margin-left:10px;
+                margin-right: 30px;
+                margin-top: 2px;
+                height:25px;
+                border: 1px solid black;
+                float: center;
+            }
+            .button {
+                text-align:center;
+                padding: 0px;
+                margin:0px;
                 width: 100%;
-                margin: 10px;
+                height: 100%;
+            }
+            .hoverbox {
+                display:none;
+                color: black;
+                position:absolute;
+                top:30px;
+                padding:3px;
+                width: 100%;
+                background-color: rgb(233, 211, 211);
+            }
+            .button:hover{
+                background-color: rgb(218, 173, 173);
+            }
+            .button:hover .hoverbox {
+                display:block;
+            }
+            .body{
+                display: flex;
+                background-color: Green;
+                flex-wrap: wrap;
+                flex-direction: row;
             }
             .body .grid{
-                position: relative;
-                float:left; width:400px;
-                background-color: white;
-                height: 400px;
-                margin: 10px;
+                width:100px;
+                text-align: center;
+                background-color:white;
+                margin:10px;
+                height: 100px;
+            }
+            .col, [class^=col-]{
+                border: 1px solid; 
+                text-align:center;
+            }
+            .colmain{
+                margin:5px;
+                padding:0px;
+            }
+            .row
+            {
+                margin:5px;
+            }
+            .colsm{
+                text-align: center;
+            }
+            img{
+                width:100%;
+                height:100%;
+                object-fit:cover;
+            }
+            .cardo{
+                height:auto;
+                width: 200px;
+                background-color:rgb(255, 107, 107);
+            }
+            .cardb{
+                height:auto;
+                width: 200px;
+                background-color:rgb(192, 112, 216);
+            }
+            .cardc{
+                height: auto;;
+                width: 200px;
+                background-color:rgb(112, 216, 190);
             }
         </style>
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"rel="stylesheet"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </header>
     <body>
         <div class="header" id="head">
@@ -139,12 +227,168 @@
             <div class="clear"></div>
             <div class="line" id='main_line'>
             </div>
+        <div class="menu" id="menu">
+            <div class="flex-container">
+                <div class="flex-item" style="flex-grow: 1">
+                    <div class="button">Home<div class="hoverbox">Go To Homepage</div></div>
+                </div>
+                <div class="flex-item" style="flex-grow: 1">
+                    <div class="button">About us<div class="hoverbox">We are web developer that like baby</div></div>
+                </div>
+                <div class="flex-item" style="flex-grow: 1">
+                    <div class="button">Online store<div class="hoverbox">Our Online Store</div></div>
+                </div>
+                <div class="flex-item" style="flex-grow: 1">
+                    <div class="button">What's new<div class="hoverbox">News will coming soon</div></div>
+                </div>
+                <div class="flex-item" style="flex-grow: 1">
+                    <div class="button">Store Finder<div class="hoverbox">Finder will coming soon</div></div>
+                </div>
+                <div class="flex-item" style="flex-grow: 1">
+                    <div class="button">Contact us<div class="hoverbox">+66 0123456</div></div>
+                </div>
+                <div class="flex-item" style="flex-grow: 1">
+                    <div class="lang">
+                        <i class="flag flag-th"></i>
+                        <i class="flag flag-uk"></i>
+                        <i class="flag flag-es"></i>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="headerb" id="hb">
+    </div>
+    <div class="headerb" id="hb"></div>
+    <div class="container-fluid" id="container_main"> 
+        <div class="row"> 
+            <div class="col colmain"> 
+                <div class="row">
+                    <div class="col">
+                        <img src="c1.png"> 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img src="c1.png"> 
+                    </div>
+                    <div class="col cardo">
+                        
+                    </div>
+                </div>
+            </div> 
+            <div class="col colmain"><img src="c2.png"></div>
         </div>
-        <div class="body">
-            <div class="grid"></div><div class="grid"></div>
+        <div class="row">
+            <div class="col cardb colmain">
+                <div class="row">
+                    Baby Safe Sleeping
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img src="c3.png"> 
+                    </div>
+                    <div class="col">
+                        We helps parents ensure a safe, warm and fomfortable sleep for their little ones....
+                    </div>
+                </div>
+            </div>
+            <div class="col cardc colmain">
+                <div class="row">
+                    <div class="col ">
+                        <div class="row">
+                            <div class="col">
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                            <div class="col">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <i class="fas fa-cart-arrow-down"></i>
+                            </div>
+                            <div class="col">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <script type="text/javascript" src="ken.js"></script>
+        <div class="row">
+            <div class="col cardc colmain">
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                            <div class="col">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <i class="fas fa-cart-arrow-down"></i>
+                            </div>
+                            <div class="col">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col cardb colmain">
+                <div class="row">
+                    Baby Safe Sleeping
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img src="c3.png"> 
+                    </div>
+                    <div class="col">
+                        We helps parents ensure a safe, warm and fomfortable sleep for their little ones....
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col cardc colmain">
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                            <div class="col">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <i class="fas fa-cart-arrow-down"></i>
+                            </div>
+                            <div class="col">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="ken.js"></script>
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>
 </html>
